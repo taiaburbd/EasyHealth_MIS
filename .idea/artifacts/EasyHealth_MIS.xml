@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="EasyHealth_MIS">
+    <output-path>$PROJECT_DIR$/out/artifacts/EasyHealth_MIS</output-path>
+    <root id="archive" name="EasyHealth_MIS.war">
+      <element id="javaee-facet-resources" facet="EasyHealth_MIS/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql.connector.java" />
+          <element id="library" level="project" name="apache.struts.struts2.dojo.plugin" />
+          <element id="library" level="project" name="javax.servlet.api" />
+          <element id="library" level="project" name="commons-fileupload-1.41" />
+        </element>
+        <element id="directory" name="classes">
+          <element id="module-output" name="EasyHealth_MIS" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

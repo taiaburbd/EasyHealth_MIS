@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+	<package name="productManagementApp" extends="struts-default">
+		<interceptors>
+			<interceptor class="it.unicas.products.interceptors.LoginInterceptor"
+				name="loginInterceptor" />
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginStack"/>
+		<action name="loginAction" class="it.unicas.products.action.LoginAction">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="logoutAction" class="it.unicas.products.action.LogoutAction">
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="welcomeAction" class="it.unicas.products.action.WelcomeAction">
+			<result name="success">/welcome.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="addAction" class="it.unicas.products.action.AddAction">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+			<result name="input">/addProduct.jsp</result>
+		</action>
+		<action name="updateDataAction" class="it.unicas.products.action.UpdateDataAction">
+			<result name="success">/updateProduct.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="updateAction" class="it.unicas.products.action.UpdateAction">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+			<result name="input">/updateProduct.jsp</result>
+		</action>
+		<action name="deleteAction" class="it.unicas.products.action.DeleteAction">
+			<result name="success" type="redirect">welcomeAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!--	Start product Area-->
+		<action name="patientAction" class="it.unicas.patients.action.PatientAction">
+			<result name="success">/patients.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="addAction" class="it.unicas.patients.action.AddAction">
+			<result name="success" type="redirect">patientAction</result>
+			<result name="input">/patientAdd.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<!--	End product Area-->
+		<!--	Start Doctor Area-->
+		<action name="doctorAction" class="it.unicas.patients.action.DoctorAction">
+			<result name="success">/doctors.jsp</result>
+		</action>
+		<!--	End Doctor Area-->
+<!--		Start appointment area-->
+		<action name="appointmentAction" class="it.unicas.patients.action.AppointmentAction">
+			<result name="success">/appointment.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="addAppointmentAction" class="it.unicas.patients.action.AddAppointmentAction">
+			<result name="success" type="redirect">appointmentAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="deleteAppointmentAction" class="it.unicas.patients.action.DeleteAppointmentAction">
+			<result name="success" type="redirect">appointmentAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+<!--		end appointment area-->
+<!--		start settings option area-->
+
+		<action name="settingAction" class="it.unicas.patients.action.SettingAction">
+			<result name="success">/settings.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="addUserAction" class="it.unicas.patients.action.AddUserAction">
+			<result name="success" type="redirect">settingAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="deleteUserAction" class="it.unicas.patients.action.DeleteUserAction">
+			<result name="success" type="redirect">settingAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+<!--		end setting option area-->
+	</package>
+</struts>
