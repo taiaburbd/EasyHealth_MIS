@@ -17,49 +17,50 @@
 
 <div align="center">
   <h2>Patient Prescription</h2>
-  <%--  <a href="patientsAdd.jsp">Add New Appointment</a>--%>
-  <%--  <s:form action="patientAction" class="filterPanel">--%>
-  <%--    <s:textfield name="patientName" label="Patient Name" class="formTextField"/>--%>
-  <%--    <s:textfield name="patientPhone" label="Patient Phone" class="formTextField"/>--%>
-  <%--    <pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />--%>
-  <%--    <s:submit value="Search" class="actionBtn"/>--%>
-  <%--  </s:form>--%>
+    <a href="prescriptionAdd.jsp">Add New Prescription</a>
+    <s:form action="patientAction" class="filterPanel">
+      <s:textfield name="patientName" label="Patient Name" class="formTextField"/>
+      <s:textfield name="patientPhone" label="Patient Phone" class="formTextField"/>
+      <pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />
+      <s:submit value="Search" class="actionBtn"/>
+    </s:form>
 </div>
 
-<table width="750" class="patientTable" align="center">
+<table width="950" class="patientTable" align="center">
   <thead>
   <tr>
     <th>Prescription ID</th>
     <th>Patient Name</th>
     <th>Doctor Name</th>
     <th>Prescription Date</th>
+    <th>Status</th>
     <th colspan="2">Actions</th>
   </tr>
   </thead>
-  <s:iterator value="patientList" var="patient">
+  <s:iterator value="prescriptionList" var="ps">
     <tr>
       <td>
-        <s:property value="#patient.patientId"/>
+        <s:property value="#ps.prescriptionID"/>
       </td>
       <td>
-        <s:property value="#patient.patientName"/>
+        <s:property value="#ps.patientName"/>
       </td>
       <td>
-        <s:property value="#patient.patientPhone"/>
+        <s:property value="#ps.doctorName"/>
       </td>
       <td>
-        <s:property value="#patient.patientDOB"/>
+        <s:property value="#ps.createDate"/>
       </td>
       <td>
-        <s:property value="#patient.createdDate"/>
+        <s:property value="#ps.status"/>
       </td>
       <td>
-        <a href="updateDataAction?patientId=<s:property value="#patient.patientId"/>">
+        <a href="updateDataAction?prescriptionID=<s:property value="#ps.prescriptionID"/>">
           <button class="actionBtn">Update</button>
         </a>
       </td>
       <td>
-        <a href="deleteAction?patientId=<s:property value="#patient.patientId"/>">
+        <a href="deleteAction?prescriptionID=<s:property value="#ps.prescriptionID"/>">
           <button class="actionBtn">Delete</button>
         </a>
       </td>

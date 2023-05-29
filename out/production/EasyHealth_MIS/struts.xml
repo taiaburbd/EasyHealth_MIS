@@ -2,7 +2,6 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
     "http://struts.apache.org/dtds/struts-2.5.dtd">
-    
 <struts>
 	<package name="productManagementApp" extends="struts-default">
 		<interceptors>
@@ -12,11 +11,20 @@
 				<interceptor-ref name="loginInterceptor" />
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
+			<interceptor-stack name="nologinStack">
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
 		</interceptors>
-		<default-interceptor-ref name="loginStack"/>
+		<default-interceptor-ref name="nologinStack"/>
+
+		<action name="/" class="it.unicas.app.action.AppAction">
+			<result name="success">/app.jsp</result>
+		</action>
+
 		<action name="loginAction" class="it.unicas.products.action.LoginAction">
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>
+
 		</action>
 		<action name="logoutAction" class="it.unicas.products.action.LogoutAction">
 			<result name="input">/login.jsp</result>
@@ -53,10 +61,33 @@
 			<result name="input">/patientAdd.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="updateDataPatientAction" class="it.unicas.patients.action.UpdateDataPatientAction">
+			<result name="success">/patientsUpdate.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="updatePatientAction" class="it.unicas.patients.action.UpdatePatientAction">
+			<result name="success" type="redirect">patientAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="deletePatientAction" class="it.unicas.patients.action.DeletePatientAction">
+			<result name="success" type="redirect">patientAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
 		<!--	End product Area-->
 		<!--	Start Doctor Area-->
-		<action name="doctorAction" class="it.unicas.patients.action.DoctorAction">
+		<action name="addDoctorAction" class="it.unicas.doctor.action.AddDoctorAction">
+			<result name="success" type="redirect">/doctorAction</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="doctorAction" class="it.unicas.doctor.action.DoctorAction">
 			<result name="success">/doctors.jsp</result>
+		</action>
+		<action name="updateDataDoctorAction" class="it.unicas.doctor.action.UpdateDataDoctorAction">
+			<result name="success">/doctorsUpdate.jsp</result>
+		</action>
+		<action name="updateDoctorAction" class="it.unicas.doctor.action.UpdateDoctorAction">
+			<result name="success" type="redirect">/doctorAction</result>
+			<result name="error">/error.jsp</result>
 		</action>
 		<!--	End Doctor Area-->
 <!--		Start appointment area-->
@@ -74,7 +105,13 @@
 			<result name="error">/error.jsp</result>
 		</action>
 
-<!--		end appointment area-->
+		<!--		end appointment area-->
+		<!--		start appointment area-->
+		<action name="prescriptionAction" class="it.unicas.prescription.action.PrescriptionAction">
+			<result name="success">/prescription.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<!--		end appointment area-->
 <!--		start settings option area-->
 
 		<action name="settingAction" class="it.unicas.patients.action.SettingAction">
@@ -91,5 +128,41 @@
 		</action>
 
 <!--		end setting option area-->
+<!--start imaging action-->
+		<action name="ImageUploadAction" class="it.unicas.image.action.ImageUploadAction">
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">image/jpeg,image/png,image/gif</param>
+				<param name="fileUpload.maximumSize">10485760</param> <!-- 10 MB -->
+			</interceptor-ref>
+			<result name="success" type="redirect">/MedicalImageAction</result>
+			<result name="input">/error.jsp</result>
+		</action>
+
+		<action name="MedicalImageAction" class="it.unicas.image.action.MedicalImageAction">
+			<result name="success">/medicalImaging.jsp</result>
+			<result name="input">/medicalImaging.jsp</result>
+		</action>
+		<action name="MedicalImageAnalysisAction" class="it.unicas.image.action.MedicalImageAnalysisAction">
+			<result name="success">/medicalImageAnalysis.jsp</result>
+			<result name="input">/medicalImageAnalysis.jsp</result>
+		</action>
+		<action name="ImageAnalysisAction" class="it.unicas.image.action.ImageAnalysisAction">
+			<result name="success">/MedicalImageAction</result>
+			<result name="input">/medicalImageAnalysis.jsp</result>
+		</action>
+		<action name="RetinalBloodVesselSegmentationAction" class="it.unicas.image.action.RetinalBloodVesselSegmentationAction">
+			<result name="redirectUrl" type="redirect">MedicalImageAnalysisAction?imageId=${imageId}</result>
+			<result name="input">/medicalImageAnalysis.jsp</result>
+		</action>
+<!--		end imaging action-->
+<!--start booking action-->
+		<action name="BookingAction" class="it.unicas.booking.action.BookingAction">
+			<result name="success">/app_booking.jsp</result>
+		</action>
+		<action name="BookingAddAction" class="it.unicas.booking.action.BookingAddAction">
+			<result name="success" type="redirect">/BookingAction${returnUrl}</result>
+		</action>
+<!--end booking action-->
 	</package>
+
 </struts>

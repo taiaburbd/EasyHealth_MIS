@@ -4,6 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+    <link rel="stylesheet" href="css/style-fn.css" />
 </head>
 <body>
 <%
@@ -18,8 +20,8 @@ if(session.getAttribute("loggedinUser") == null) {
 
      <a href="doctorAction">Doctors</a>
      <a href="patientAction">Patients</a>
-     <a href="prescription.jsp">Prescription</a>
-     <a href="medicalImaging.jsp">Medical Imaging</a>
+     <a href="prescriptionAction">Prescription</a>
+     <a href="MedicalImageAction">Medical Imaging</a>
      <a href="treatment.jsp">Treatment</a>
      <a href="followup.jsp">Followup</a>
 

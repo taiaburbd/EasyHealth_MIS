@@ -82,7 +82,7 @@ public class PatientManagementDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
-				patient = new Patients(rs.getString("prod_id"),
+				patient = new Patients(rs.getString("patient_id"),
 						rs.getString("patient_name"),
 						rs.getString("patient_phone"),
 						rs.getString("patient_email"),
@@ -98,18 +98,42 @@ public class PatientManagementDAO {
 		}
 		
 		return patient;
+	}public static Patients getPatinetByEmailPhone(String patientEmail, String patientPhone) {
+		Patients patient = null;
+		try
+		{
+			Connection conn = DBUtil.getConnection();
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM patient_list WHERE patient_email = ? and patient_phone= ?");
+			ps.setString(1, patientEmail);
+			ps.setString(2, patientPhone);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				patient = new Patients(rs.getString("patient_id"),
+						rs.getString("patient_name"),
+						rs.getString("patient_phone"),
+						rs.getString("patient_email"),
+						rs.getString("patient_blood_group"),
+						rs.getString("patient_dob"),
+						rs.getString("patient_sex"),
+						rs.getString("created_date"));
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		return patient;
 	}
 	public static int addPatient(Patients patients) {
-		Date date = new Date();
-		SimpleDateFormat DateFor = new SimpleDateFormat("yyMMddms");
-		String stringDate= DateFor.format(date);
-		String genPatientId="P"+stringDate;
+
 		int status = 0;
 		try
 		{
 			Connection conn = DBUtil.getConnection();
 			PreparedStatement ps = conn.prepareStatement("INSERT INTO patient_list VALUES(?,?,?,?,?,?,?,?)");
-			ps.setString(1, genPatientId);
+			ps.setString(1, patients.getPatientId());
 			ps.setString(2, patients.getPatientName());
 			ps.setString(3, patients.getPatientPhone());
 			ps.setString(4, patients.getPatientEmail());
@@ -137,6 +161,7 @@ public class PatientManagementDAO {
 			ps.setString(4, patients.getPatientBloodGroup());
 			ps.setString(5, patients.getPatientDOB());
 			ps.setString(6, patients.getPatientGender());
+			ps.setString(7, patients.getPatientIdId());
 			status = ps.executeUpdate();
 		}
 		catch(Exception e)

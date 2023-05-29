@@ -16,6 +16,7 @@
 	
 	<div align="center">
 		<h2>Doctors</h2>
+		<a href="doctorsAdd.jsp">Add New Doctor</a>
 		<s:form action="DoctorAction" class="filterPanel">
 			<s:textfield name="doctorName" label="Doctor Name" class="formTextField"/>
 			<s:textfield name="DoctorPhone" label="Doctor Phone" class="formTextField"/>
@@ -30,7 +31,8 @@
 				<th>Doctor ID</th>
 				<th>Name</th>
 				<th>Doctor Phone</th>
-				<th colspan="2">Actions</th>
+				<th>Doctor Email</th>
+				<th>Actions</th>
 			</tr>
 		</thead>
 	
@@ -44,21 +46,17 @@
 				</td>
 				<td>
 					<s:property value="#doctor.doctorPhone"/>
+				</td>	<td>
+					<s:property value="#doctor.doctorEmail"/>
 				</td>
 				<td>
 					<a
-					href="updateDataAction?doctorId=<s:property value="#doctor.doctorId"/>">
+					href="updateDataDoctorAction?doctorId=<s:property value="#doctor.doctorId"/>">
 						<button class="actionBtn">Update</button>
 					</a>	
 				</td>
-				<td>
-					<a href="deleteAction?doctorId=<s:property value="#doctor.doctorId"/>">
-						<button class="actionBtn">Delete</button>
-					</a>
-				</td>
 			</tr>
 		</s:iterator>
-		
 	</table>
 </body>
 </html>

@@ -22,7 +22,6 @@
     <s:textfield name="patientEmail" label="Email" class="formTextField"/>
     <s:textfield name="patientBloodGroup" label="Blood Group" class="formTextField"/>
     <pippo:datetimepicker name="patientDOB" label="Date of Birth" displayFormat="dd-MMM-yyyy" />
-<%--    <s:textfield name="patientGender" label="Gender" class="formTextField"/>--%>
     <s:radio name="patientGender" title="Male" list="#{'Male' : 'Male'}"/>
     <s:radio name="patientGender" title="Female" list="#{ 'Female' : 'Female'}"/>
     <s:submit value="Save" class="actionBtn"/>

@@ -59,7 +59,6 @@
             </td>
         </tr>
     </s:iterator>
-
 </table>
 
 <div align="center">
@@ -67,7 +66,7 @@
     <s:form action="addAppointmentAction" class="formTable">
         <s:textfield name="patientId" label="Patient ID" class="formTextField"/>
         <s:select
-                name="doctorName"
+                name="doctorId"
                 label="Doctor Name"
                 listValue="doctorName"
                 listKey="doctorId"
@@ -75,9 +74,8 @@
 
         </s:select>
         <pippo:datetimepicker name="appointmentDate" label="Appointment Date" displayFormat="dd-MMM-yyyy"/>
-        <s:select label="Time slot: "
+        <s:select name="timeslot" label="Time slot: "
                   list="#{'10:00':'10:00', '11:00':'11:00','12:00':'12:00','13:00':'13:00','14:00':'14:00','15:00':'15:00','16:00':'16:00','17:00':'17:00','18:00':'18:00'}">
-
         </s:select>
 
         <s:submit value="Save" class="actionBtn"/>

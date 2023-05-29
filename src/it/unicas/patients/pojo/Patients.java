@@ -1,5 +1,6 @@
 package it.unicas.patients.pojo;
 
+
 public class Patients {
 
 	private String patientId;
@@ -8,6 +9,7 @@ public class Patients {
 	private String patientEmail;
 	private String patientBloodGroup;
 	private String patientDOB;
+	private String patientAge;
 	private String patientGender;
 	private String createdDate;
 	
@@ -96,6 +98,17 @@ public class Patients {
 		this.createdDate = createdDate;
 	}
 
+	public String getPatientAge() {
+		String birthday = this.patientDOB;
+
+		return patientAge;
+	}
+
+	public void setPatientAge(String patientAge) {
+		patientAge="20";
+		this.patientAge = patientAge;
+	}
+
 	@Override
 	public String toString() {
 		return "Patients{" +
@@ -105,6 +118,7 @@ public class Patients {
 				", patientEmail='" + patientEmail + '\'' +
 				", patientBloodGroup='" + patientBloodGroup + '\'' +
 				", patientDOB='" + patientDOB + '\'' +
+				", patientAge='" + patientAge + '\'' +
 				", patientGender='" + patientGender + '\'' +
 				", createdDate='" + createdDate + '\'' +
 				'}';

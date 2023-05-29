@@ -19,6 +19,8 @@ public class AddAction extends ActionSupport{
 		String statusCode = "";
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
 		String createdDateStr = formatter.format(new Date());
+
+
 		Product product = new Product(productId, productName, productCategory, productPrice, createdDateStr);
 		int recordAdded = ProductManagementDAO.addProduct(product);
 		if (recordAdded == 1) {

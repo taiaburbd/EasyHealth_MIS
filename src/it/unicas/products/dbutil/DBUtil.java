@@ -10,7 +10,7 @@ public class DBUtil {
 		try 
 		{
       Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-      conn = DriverManager.getConnection("jdbc:mysql://localhost/mydb?useSSL=false&serverTimezone=UTC", "root", "");
+      conn = DriverManager.getConnection("jdbc:mysql://localhost/easyhealth_db?useSSL=false&serverTimezone=UTC", "root", "");
 		}
 		catch(Exception e)
 		{
