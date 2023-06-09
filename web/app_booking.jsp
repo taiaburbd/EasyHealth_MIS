@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!--====== Title ======-->
-    <title>Business | Bootstrap 5 Business Template</title>
+    <title>EasyHealth|| Booking inforamton</title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg"/>
@@ -74,10 +74,13 @@
                                     <i class="lni lni-alarm-clock"></i>
                                 </div>
                                 <div class="contact-content">
-                                    <h4>Booked appointment</h4>
+                                    <h4>Previous appointment</h4>
                                     <s:iterator value="appointmentList" var="appointment">
                                         <p>Date: <strong><s:property value="#appointment.appointmentDate"/></strong>
-                                            Time: <strong><s:property value="#appointment.timeslot"/></strong></p>
+                                            Time: <strong><s:property value="#appointment.timeslot"/></strong>
+                                        <br>
+                                            Doctor:
+                                        </p>
                                     </s:iterator>
                                 </div>
                             </div>
@@ -181,55 +184,6 @@
                                 <a href="/EasyHealth_MIS/">Look good! Take me home page</a>
                             </div>
 
-                            <%--              <div class="row">--%>
-                            <%--                <div class="col-md-6">--%>
-                            <%--                  <input type="text" name="name" id="name" placeholder="Name" required />--%>
-                            <%--                </div>--%>
-                            <%--                <div class="col-md-6">--%>
-                            <%--                  <input type="email" name="email" id="email" placeholder="Email" required />--%>
-                            <%--                </div>--%>
-                            <%--              </div>--%>
-                            <%--              <div class="row">--%>
-                            <%--                <div class="col-md-6">--%>
-                            <%--                  <input type="text" name="phone" id="phone" placeholder="Phone" required />--%>
-                            <%--                </div>--%>
-                            <%--                <div class="col-md-6">--%>
-                            <%--                  <input type="text" name="subject" id="subject" placeholder="Subject" required />--%>
-                            <%--                </div>--%>
-                            <%--              </div>--%>
-                            <%--              <div class="row">--%>
-                            <%--                <div class="col-md-6">--%>
-                            <%--                  <s:select--%>
-                            <%--                          name="doctorId"--%>
-                            <%--                          label="Doctor Name"--%>
-                            <%--                          listValue="doctorName"--%>
-                            <%--                          listKey="doctorId"--%>
-                            <%--                          list="doctorList">--%>
-                            <%--                  </s:select>--%>
-                            <%--                </div>--%>
-
-                            <%--              </div>--%>
-                            <%--              <div class="row">--%>
-
-                            <%--                </div>--%>
-                            <%--                <div class="col-md-6">--%>
-
-                            <%--                </div>--%>
-                            <%--              </div>--%>
-                            <%--              <div class="row">--%>
-                            <%--                <div class="col-12">--%>
-                            <%--                  <textarea name="message" id="message" placeholder="Type Message" rows="5"></textarea>--%>
-                            <%--                </div>--%>
-                            <%--              </div>--%>
-                            <%--              <div class="row">--%>
-                            <%--                <div class="col-12">--%>
-                            <%--                  <div class="button text-center rounded-buttons">--%>
-                            <%--                    <button type="submit" class="btn primary-btn rounded-full">--%>
-                            <%--                      Send Message--%>
-                            <%--                    </button>--%>
-                            <%--                  </div>--%>
-                            <%--                </div>--%>
-                            <%--              </div>--%>
                         </form>
                 </div>
             </div>

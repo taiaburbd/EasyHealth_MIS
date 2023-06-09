@@ -17,14 +17,13 @@
 		</interceptors>
 		<default-interceptor-ref name="nologinStack"/>
 
-		<action name="/" class="it.unicas.app.action.AppAction">
+		<action name="AppAction" class="it.unicas.app.action.AppAction">
 			<result name="success">/app.jsp</result>
 		</action>
 
 		<action name="loginAction" class="it.unicas.products.action.LoginAction">
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>
-
 		</action>
 		<action name="logoutAction" class="it.unicas.products.action.LogoutAction">
 			<result name="input">/login.jsp</result>
@@ -91,16 +90,16 @@
 		</action>
 		<!--	End Doctor Area-->
 <!--		Start appointment area-->
-		<action name="appointmentAction" class="it.unicas.patients.action.AppointmentAction">
+		<action name="appointmentAction" class="it.unicas.appointment.action.AppointmentAction">
 			<result name="success">/appointment.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
-		<action name="addAppointmentAction" class="it.unicas.patients.action.AddAppointmentAction">
+		<action name="addAppointmentAction" class="it.unicas.appointment.action.AddAppointmentAction">
 			<result name="success" type="redirect">appointmentAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
 
-		<action name="deleteAppointmentAction" class="it.unicas.patients.action.DeleteAppointmentAction">
+		<action name="deleteAppointmentAction" class="it.unicas.appointment.action.DeleteAppointmentAction">
 			<result name="success" type="redirect">appointmentAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
@@ -114,15 +113,15 @@
 		<!--		end appointment area-->
 <!--		start settings option area-->
 
-		<action name="settingAction" class="it.unicas.patients.action.SettingAction">
+		<action name="settingAction" class="it.unicas.users.action.SettingAction">
 			<result name="success">/settings.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
-		<action name="addUserAction" class="it.unicas.patients.action.AddUserAction">
+		<action name="addUserAction" class="it.unicas.users.action.AddUserAction">
 			<result name="success" type="redirect">settingAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
-		<action name="deleteUserAction" class="it.unicas.patients.action.DeleteUserAction">
+		<action name="deleteUserAction" class="it.unicas.users.action.DeleteUserAction">
 			<result name="success" type="redirect">settingAction</result>
 			<result name="error">/error.jsp</result>
 		</action>
@@ -156,9 +155,11 @@
 		</action>
 <!--		end imaging action-->
 <!--start booking action-->
+
 		<action name="BookingAction" class="it.unicas.booking.action.BookingAction">
 			<result name="success">/app_booking.jsp</result>
 		</action>
+
 		<action name="BookingAddAction" class="it.unicas.booking.action.BookingAddAction">
 			<result name="success" type="redirect">/BookingAction${returnUrl}</result>
 		</action>

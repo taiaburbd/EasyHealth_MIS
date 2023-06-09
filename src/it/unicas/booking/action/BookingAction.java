@@ -39,7 +39,6 @@ public class BookingAction extends ActionSupport {
 
     public void checkAppointment() {
         appointmentList = AppointmentManagementDAO.getPatientAppointment(patientEmail, patientPhone);
-
     }
 
 
@@ -137,19 +136,19 @@ public class BookingAction extends ActionSupport {
         this.patientGender = patientGender;
     }
 
-    public List<Appointment> getAppointmentList() {
-        return appointmentList;
-    }
-
-    public void setAppointmentList(List<Appointment> appointmentList) {
-        this.appointmentList = appointmentList;
-    }
-
     public String getPatientInfo() {
         return patientInfo;
     }
 
     public void setPatientInfo(String patientInfo) {
         this.patientInfo = patientInfo;
+    }
+
+    public List<Appointment> getAppointmentList() {
+        return appointmentList;
+    }
+
+    public void setAppointmentList(List<Appointment> appointmentList) {
+        this.appointmentList = appointmentList;
     }
 }

@@ -44,7 +44,7 @@
 </table>
 
 <div align="center">
-    <h2>Add New User</h2>
+    <h2>Add New Administative User</h2>
     <s:form action="addUserAction" class="formTable">
 
         <s:textfield name="userName" label="User Name" class="formTextField"/>

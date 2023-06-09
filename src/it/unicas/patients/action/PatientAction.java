@@ -20,6 +20,7 @@ public class PatientAction extends ActionSupport{
 		System.out.println(patientName);
 		System.out.println(patientPhone);
 		System.out.println(createdDate);
+
 		String createdDateStr = "";
 		if(createdDate != null) {
 			SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
