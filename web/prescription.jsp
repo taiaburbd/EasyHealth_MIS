@@ -17,13 +17,12 @@
 
 <div align="center">
   <h2>Patient Prescription</h2>
-    <a href="prescriptionAdd.jsp">Add New Prescription</a>
-    <s:form action="patientAction" class="filterPanel">
-      <s:textfield name="patientName" label="Patient Name" class="formTextField"/>
-      <s:textfield name="patientPhone" label="Patient Phone" class="formTextField"/>
-      <pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />
-      <s:submit value="Search" class="actionBtn"/>
-    </s:form>
+<%--    <s:form action="prescriptionAction" class="filterPanel">--%>
+<%--      <s:textfield name="patientName" label="Patient Name" class="formTextField"/>--%>
+<%--      <s:textfield name="patientPhone" label="Patient Phone" class="formTextField"/>--%>
+<%--      <pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />--%>
+<%--      <s:submit value="Search" class="actionBtn"/>--%>
+<%--    </s:form>--%>
 </div>
 
 <table width="950" class="patientTable" align="center">
@@ -33,7 +32,6 @@
     <th>Patient Name</th>
     <th>Doctor Name</th>
     <th>Prescription Date</th>
-    <th>Status</th>
     <th colspan="2">Actions</th>
   </tr>
   </thead>
@@ -52,15 +50,12 @@
         <s:property value="#ps.createDate"/>
       </td>
       <td>
-        <s:property value="#ps.status"/>
-      </td>
-      <td>
-        <a href="updateDataAction?prescriptionID=<s:property value="#ps.prescriptionID"/>">
-          <button class="actionBtn">Update</button>
+        <a href="PrintPrescriptionAction?prescriptionId=<s:property value="#ps.prescriptionID"/>&patientId=<s:property value="#ps.patientId"/>&appointmentId=<s:property value="#ps.appointmentId"/>&doctorId=<s:property value="#ps.doctorId"/>" target="_blank">
+          <button class="actionBtn">Print</button>
         </a>
       </td>
       <td>
-        <a href="deleteAction?prescriptionID=<s:property value="#ps.prescriptionID"/>">
+        <a href="deletePrescriptionAction?prescriptionID=<s:property value="#ps.prescriptionID"/>">
           <button class="actionBtn">Delete</button>
         </a>
       </td>

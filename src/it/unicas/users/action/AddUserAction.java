@@ -31,6 +31,7 @@ public class AddUserAction extends ActionSupport {
         return statusCode;
     }
 
+
     public String getUserName() {
         return userName;
     }

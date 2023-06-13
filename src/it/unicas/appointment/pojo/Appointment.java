@@ -24,11 +24,27 @@ public class Appointment {
 		this.appointmentDate = appointmentDate;
 		this.timeslot = timeslot;
 	}
+	public Appointment(String appointmentId, String patientId,String patientName,String doctorId, String doctorName, String appointmentDate,String timeslot) {
+		super();
+		this.appointmentId = appointmentId;
+		this.patientId = patientId;
+		this.patientName = patientName;
+		this.doctorId = doctorId;
+		this.doctorName = doctorName;
+		this.appointmentDate = appointmentDate;
+		this.timeslot = timeslot;
+	}
 
 	public Appointment(String patientId, String doctorId, String appointmentDate, String timeSlot) {
 		super();
 		this.patientId = patientId;
 		this.doctorId = doctorId;
+		this.appointmentDate = appointmentDate;
+		this.timeslot = timeSlot;
+	}
+	public Appointment(String appointmentId,String appointmentDate, String timeSlot) {
+		super();
+		this.appointmentId = appointmentId;
 		this.appointmentDate = appointmentDate;
 		this.timeslot = timeSlot;
 	}

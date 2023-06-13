@@ -24,6 +24,7 @@ public class AddAction extends ActionSupport {
         String statusCode = "";
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String createdDateStr = formatter.format(new Date());
+        String patientDOBStr = patientDOB.substring(0,10);
 
         Date date = new Date();
         SimpleDateFormat DateFor = new SimpleDateFormat("yyMMddms");
@@ -32,7 +33,7 @@ public class AddAction extends ActionSupport {
         String genPatientId="P"+stringDate;
         setPatientId(genPatientId);
 
-        Patients patient = new Patients(getPatientId(), patientName, patientPhone, patientEmail,patientBloodGroup,createdDateStr,patientGender, createdDateStr);
+        Patients patient = new Patients(getPatientId(), patientName, patientPhone, patientEmail,patientBloodGroup,patientDOBStr,patientGender, createdDateStr);
         int recordAdded = PatientManagementDAO.addPatient(patient);
 
         if (recordAdded == 1) {

@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!--====== Title ======-->
-  <title>Business | Bootstrap 5 Business Template</title>
+  <title>EasyHealth | Healthcare Information Management System (MIS).</title>
 
   <!--====== Favicon Icon ======-->
   <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg" />
@@ -229,8 +229,7 @@
               <h6>Services</h6>
               <h2 class="fw-bold">Our Best Services</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
+                EasyHealth- Healthcare Information Management System (MIS), offers comprehensive solutions to streamline and enhance the efficiency of healthcare organizations.
               </p>
             </div>
           </div>
@@ -248,10 +247,9 @@
               <i class="lni lni-capsule"></i>
             </div>
             <div class="service-content">
-              <h4>Refreshing Design</h4>
+              <h4>Patient Registration and Management</h4>
               <p>
-                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                eirmod tempor ividunt labor dolore magna.
+                Our system simplifies the patient registration process, capturing vital details such as demographics, medical history, and insurance information. It enables easy retrieval of patient records, facilitates appointment scheduling, and tracks patient visits, ensuring smooth management of patient flow within the hospital.
               </p>
             </div>
           </div>
@@ -262,10 +260,9 @@
               <i class="lni lni-bootstrap"></i>
             </div>
             <div class="service-content">
-              <h4>Solid Bootstrap 5</h4>
+              <h4>Electronic Health Records (EHR)</h4>
               <p>
-                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                eirmod tempor ividunt labor dolore magna.
+                We provide a secure and centralized electronic health records system that eliminates the need for paper-based records. It allows healthcare professionals to access patient information in real-time, ensuring seamless communication and collaboration among different departments. Our EHR system also promotes accurate diagnosis and treatment decisions, resulting in improved patient care.
               </p>
             </div>
           </div>
@@ -276,10 +273,9 @@
               <i class="lni lni-shortcode"></i>
             </div>
             <div class="service-content">
-              <h4>100+ Components</h4>
+              <h4>Appointment and Scheduling</h4>
               <p>
-                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                eirmod tempor ividunt labor dolore magna.
+                Our system offers a user-friendly interface for managing appointments and scheduling procedures. It optimizes the allocation of resources, reduces waiting times, and enhances patient satisfaction. Additionally, automated reminders and notifications help patients and staff stay updated on upcoming appointments, reducing no-show rates.
               </p>
             </div>
           </div>
@@ -290,10 +286,10 @@
               <i class="lni lni-dashboard"></i>
             </div>
             <div class="service-content">
-              <h4>Speed Optimized</h4>
+              <h4>Imaging Integration</h4>
               <p>
-                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                eirmod tempor ividunt labor dolore magna.
+                Our system seamlessly integrates with laboratory and imaging departments. Test results are captured and linked to patient records, eliminating manual data entry and reducing turnaround times. This integration enhances collaboration between clinicians and diagnostic departments, leading to faster and more accurate diagnoses.
+
               </p>
             </div>
           </div>
@@ -304,10 +300,9 @@
               <i class="lni lni-layers"></i>
             </div>
             <div class="service-content">
-              <h4>Fully Customizable</h4>
+              <h4>Security and Compliance</h4>
               <p>
-                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                eirmod tempor ividunt labor dolore magna.
+                We prioritize the security and privacy of patient information, ensuring compliance with relevant regulations such as HIPAA (Health Insurance Portability and Accountability Act). Our system implements stringent access controls, data encryption, and regular backups to safeguard sensitive data from unauthorized access or loss.
               </p>
             </div>
           </div>
@@ -320,8 +315,7 @@
             <div class="service-content">
               <h4>Regular Updates</h4>
               <p>
-                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                eirmod tempor ividunt labor dolore magna.
+                Our hospital management system, healthcare organizations can streamline their processes, improve patient care, and enhance operational efficiency. We are committed to providing a reliable and scalable solution that meets the evolving needs of modern healthcare facilities.
               </p>
             </div>
           </div>
@@ -378,7 +372,7 @@
                 <p>EasyHealth successfully processed patients appointment.</p>
                 <div class="price">
                   <h2 class="amount">
-                    <span class="currency"></span>99<span class="duration">Appointments </span>
+                    <span class="currency"></span><s:property value="totalAppointment"/><span class="duration">Appointments </span>
                   </h2>
                 </div>
             </div>
@@ -391,7 +385,7 @@
                 <p>Easyhealth Successfully Analysis Medical Imaging.</p>
                 <div class="price">
                   <h2 class="amount">
-                    <span class="currency"></span>150<span class="duration">Images </span>
+                    <span class="currency"></span><s:property value="totalProcessImages"/><span class="duration">Images </span>
                   </h2>
                 </div>
             </div>
@@ -441,7 +435,7 @@
                   <div class="contact-content">
                     <h4>Contact</h4>
                     <p>0984537278623</p>
-                    <p>yourmail@gmail.com</p>
+                    <p>easyhealth@unicas.com</p>
                   </div>
                 </div>
               </div>
@@ -452,8 +446,11 @@
                   </div>
                   <div class="contact-content">
                     <h4>Address</h4>
-                    <p>175 5th Ave, New York, NY 10010</p>
-                    <p>United States</p>
+                    <p>© Università degli Studi di Cassino e del Lazio Meridionale</p>
+                    <p>Viale dell'Università - Rettorato - (Campus Universitario)
+                      Loc. Folcara  - 03043 CASSINO (FR)
+                      Centralino 0776 2991
+                      Fax 0776 310562</p>
                   </div>
                 </div>
               </div>
@@ -531,93 +528,13 @@
   <section class="map-section map-style-9">
     <div class="map-container">
       <object style="border:0; height: 500px; width: 100%;"
-        data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.7887109309127!2d-77.44196278417968!3d38.95165507956235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDU3JzA2LjAiTiA3N8KwMjYnMjMuMiJX!5e0!3m2!1sen!2sbd!4v1545420879707"></object>
+        data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.4944515310185!2d13.825747711097303!3d41.47187899063135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133abc0c18d2c96b%3A0x3adc1c25aab0a594!2sUniversity%20of%20Cassino!5e0!3m2!1sen!2sit!4v1686618262075!5m2!1sen!2sit"></object>
     </div>
     </div>
   </section>
   <!-- ========================= map-section end ========================= -->
 
-  <!-- Start Footer Area -->
-  <footer class="footer-area footer-eleven">
-    <!-- Start Footer Top -->
-    <div class="footer-top">
-      <div class="container">
-        <div class="inner-content">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="footer-widget f-about">
-                <div class="logo">
-                  <a href="AppAction">
-                    <img src="assets/images/logo.svg" alt="#" class="img-fluid" />
-                  </a>
-                </div>
-                <p>
-                  Making the world a better place through constructing elegant
-                  hierarchies.
-                </p>
-                <p class="copyright-text">
-                  <span>© 2024 Ayro UI.</span>Designed and Developed by
-                  <a href="javascript:void(0)" rel="nofollow"> Ayro UI </a>
-                </p>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-            <div class="col-lg-2 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="footer-widget f-link">
-                <h5>Solutions</h5>
-                <ul>
-                  <li><a href="javascript:void(0)">Marketing</a></li>
-                  <li><a href="javascript:void(0)">Analytics</a></li>
-                  <li><a href="javascript:void(0)">Commerce</a></li>
-                  <li><a href="javascript:void(0)">Insights</a></li>
-                </ul>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-            <div class="col-lg-2 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="footer-widget f-link">
-                <h5>Support</h5>
-                <ul>
-                  <li><a href="javascript:void(0)">Pricing</a></li>
-                  <li><a href="javascript:void(0)">Documentation</a></li>
-                  <li><a href="javascript:void(0)">Guides</a></li>
-                  <li><a href="javascript:void(0)">API Status</a></li>
-                </ul>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-              <!-- Single Widget -->
-              <div class="footer-widget newsletter">
-                <h5>Subscribe</h5>
-                <p>Subscribe to our newsletter for the latest updates</p>
-                <form action="#" method="get" target="_blank" class="newsletter-form">
-                  <input name="EMAIL" placeholder="Email address" required="required" type="email" />
-                  <div class="button">
-                    <button class="sub-btn">
-                      <i class="lni lni-envelope"></i>
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <!-- End Single Widget -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/ End Footer Top -->
-  </footer>
-  <!--/ End Footer Area -->
-
-	<div class="made-in-ayroui mt-4">
-		<a href="https://ayroui.com" target="_blank" rel="nofollow">
-		  <img style="width:220px" src="assets/images/ayroui.svg">
-		</a>
-	</div>
+<%@ include file="app_footer.jsp" %>
 
   <a href="#" class="scroll-top btn-hover">
     <i class="lni lni-chevron-up"></i>

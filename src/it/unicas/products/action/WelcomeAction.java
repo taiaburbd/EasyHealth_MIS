@@ -6,64 +6,55 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import it.unicas.app.dao.AppManagementDAO;
+import it.unicas.app.pojo.App;
 import it.unicas.products.dao.ProductManagementDAO;
 import it.unicas.products.pojo.Product;
 
 public class WelcomeAction extends ActionSupport{
-	
-	private List<Product> products;
-	private String productName;
-	private String productCategory;
-	private Date createdDate;
-	
-	public void initializeProducts() {
-		System.out.println("****** Filter Data ******");
-		System.out.println(productName);
-		System.out.println(productCategory);
-		System.out.println(createdDate);
-		String createdDateStr = "";
-		if(createdDate != null) {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
-			createdDateStr = formatter.format(createdDate);
-		}
-		products = ProductManagementDAO.getAllProducts(productName, productCategory, createdDateStr); 
-	}
-	
+	private String totalPatients;
+	private String totalAppointment;
+	private String totalProcessImages;
+
+	private String totalUsers;
+
 	public String execute() {
-		initializeProducts();
-		return "success";
+		totalPatients = AppManagementDAO.getTotalpatients().getTotalValues();
+		totalAppointment =AppManagementDAO.getTotalAppointment().getTotalValues();
+		totalProcessImages =AppManagementDAO.getTotalProcessImages().getTotalValues();
+		totalUsers= AppManagementDAO.getTotalUsers().getTotalValues();
+		return SUCCESS;
 	}
 
-	public List<Product> getProducts() {
-		return products;
+	public String getTotalPatients() {
+		return totalPatients;
 	}
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setTotalPatients(String totalPatients) {
+		this.totalPatients = totalPatients;
 	}
 
-	public String getProductName() {
-		return productName;
+	public String getTotalAppointment() {
+		return totalAppointment;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setTotalAppointment(String totalAppointment) {
+		this.totalAppointment = totalAppointment;
 	}
 
-	public String getProductCategory() {
-		return productCategory;
+	public String getTotalProcessImages() {
+		return totalProcessImages;
 	}
 
-	public void setProductCategory(String productCategory) {
-		this.productCategory = productCategory;
+	public void setTotalProcessImages(String totalProcessImages) {
+		this.totalProcessImages = totalProcessImages;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
+	public String getTotalUsers() {
+		return totalUsers;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setTotalUsers(String totalUsers) {
+		this.totalUsers = totalUsers;
 	}
-	
 }

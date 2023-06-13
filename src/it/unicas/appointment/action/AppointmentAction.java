@@ -17,6 +17,8 @@ public class AppointmentAction extends ActionSupport{
 	private String patientId;
 	private Date appointmentDate;
 
+	private String doctorId;
+
 	private String doctorName;
 	private String doctorPhone;
 	private Date createdDate;

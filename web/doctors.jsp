@@ -17,7 +17,7 @@
 	<div align="center">
 		<h2>Doctors</h2>
 		<a href="doctorsAdd.jsp">Add New Doctor</a>
-		<s:form action="DoctorAction" class="filterPanel">
+		<s:form action="doctorAction" class="filterPanel">
 			<s:textfield name="doctorName" label="Doctor Name" class="formTextField"/>
 			<s:textfield name="DoctorPhone" label="Doctor Phone" class="formTextField"/>
 			<pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />
@@ -25,7 +25,7 @@
 		</s:form>
 	</div>
 
-	<table width="750" class="productTable" align="center">
+	<table width="850" class="productTable" align="center">
 		<thead>  
 			<tr>
 				<th>Doctor ID</th>

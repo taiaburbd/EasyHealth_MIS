@@ -49,6 +49,7 @@ public class AppointmentManagementDAO {
 						rs.getString("id"),
 						rs.getString("patient_id"),
 						rs.getString("patient_name"),
+						rs.getString("doctor_id"),
 						rs.getString("dr_name"),
 						rs.getString("appointment_date"),
 						rs.getString("time_slot")
@@ -98,21 +99,18 @@ public class AppointmentManagementDAO {
 		}
 		return appointmentList;
 	}
-	public static Appointment getAppointmentById(String patientId) {
+	public static Appointment getAppointmentById(String appointmentId) {
 		Appointment appointment = null;
 		try
 		{
 			Connection conn = DBUtil.getConnection();
 			PreparedStatement ps = conn.prepareStatement("SELECT * FROM appointment WHERE id = ?");
-			ps.setString(1, patientId);
+			ps.setString(1, appointmentId);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
 				appointment = new Appointment(
 						rs.getString("id"),
-						rs.getString("patient_id"),
-						rs.getString("patient_name"),
-						rs.getString("dr_name"),
 						rs.getString("appointment_date"),
 						rs.getString("time_slot")
 				);

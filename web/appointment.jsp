@@ -24,21 +24,25 @@
     </s:form>
 </div>
 
-<table width="750" class="patientTable" align="center">
+<table width="1050" class="patientTable" align="center">
     <thead>
     <tr>
         <th>Appointment ID</th>
+        <th>Patient ID</th>
         <th>Patient Name</th>
         <th>Doctor Name</th>
         <th>Appointment Date</th>
         <th>Time</th>
-        <th>Actions</th>
+        <th colspan="2">Actions</th>
     </tr>
     </thead>
     <s:iterator value="appointmentList" var="appointment">
         <tr>
             <td>
                 <s:property value="#appointment.appointmentId"/>
+            </td>
+            <td>
+                <s:property value="#appointment.patientId"/>
             </td>
             <td>
                 <s:property value="#appointment.patientName"/>
@@ -53,7 +57,12 @@
                 <s:property value="#appointment.timeslot"/>
             </td>
             <td>
-                <a href="deleteAppointmentAction?appointmentId=<s:property value="#appointment.appointmentId"/>">
+                <a href="addPrescriptionAction?patientId=<s:property value="#appointment.patientId"/>&appointmentId=<s:property value="#appointment.appointmentId"/>&doctorId=<s:property value="#appointment.doctorId"/>" >
+                    <button class="actionBtn" title="Make Prescription"> Prescription</button>
+                </a>
+            </td>
+            <td>
+                <a href="deleteAppointmentAction?appointmentId=<s:property value="#appointment.appointmentId"/>" onclick="return confirm('Are you sure?')">
                     <button class="actionBtn">Delete</button>
                 </a>
             </td>

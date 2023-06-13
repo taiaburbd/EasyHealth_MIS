@@ -3,6 +3,7 @@ package it.unicas.appointment.action;
 import com.opensymphony.xwork2.ActionSupport;
 import it.unicas.appointment.dao.AppointmentManagementDAO;
 import it.unicas.appointment.pojo.Appointment;
+import it.unicas.helper.EmailSender;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,12 +18,8 @@ public class AddAppointmentAction extends ActionSupport {
     public String execute() {
         String statusCode = "";
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String appointmentDateStr = formatter.format(new Date());
+        String appointmentDateStr = appointmentDate.substring(0,10);
 
-        System.out.println(doctorId);
-        System.out.println(timeslot);
-        System.out.println(appointmentDate);
-        System.out.println(appointmentDateStr);
         Appointment appointment = new Appointment(patientId, doctorId, appointmentDateStr, timeslot);
         int recordAdded = AppointmentManagementDAO.addAppointment(appointment);
 
@@ -30,6 +27,7 @@ public class AddAppointmentAction extends ActionSupport {
 
         if (recordAdded == 1) {
             statusCode = ActionSupport.SUCCESS;
+//          EmailSender.send();
         } else {
             statusCode = ActionSupport.ERROR;
         }

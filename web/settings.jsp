@@ -23,6 +23,7 @@
     <thead>
     <tr>
         <th>User Name</th>
+        <th>Created Date</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -30,6 +31,9 @@
         <tr>
             <td>
                 <s:property value="#user.userName"/>
+            </td>
+            <td>
+                <s:property value="#user.createdDate"/>
             </td>
             <td>
                 <c:if test="#user.userName!='prova'">

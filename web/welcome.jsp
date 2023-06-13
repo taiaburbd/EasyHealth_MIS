@@ -9,64 +9,70 @@
 <title>Welcome</title>
 <link rel="stylesheet" href="css/style.css">
 <pippo:head />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 	
 	<%@ include file="header.jsp" %>
-	
-	<div align="center">
-		<h2>Welcome</h2>
-		<s:form action="welcomeAction" class="filterPanel">
-			<s:textfield name="productName" label="Product Name" class="formTextField"/>
-			<s:textfield name="productCategory" label="Product Category" class="formTextField"/>
-			<pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />
-			<s:submit value="Search Product" class="actionBtn"/>
-		</s:form>
-	</div>
 
-	<table width="750" class="productTable" align="center">
-		<thead>  
-			<tr>
-				<th>Product ID</th>
-				<th>Product Name</th>
-				<th>Product Category</th>
-				<th>Product Price</th>
-				<th>Created Date</th>
-				<th colspan="2">Actions</th>
-			</tr>
-		</thead>
-	
-		<s:iterator value="products" var="product">
-			<tr>
-				<td>
-					<s:property value="#product.productId"/>
-				</td>
-				<td>
-					<s:property value="#product.productName"/>
-				</td>
-				<td>
-					<s:property value="#product.productCategory"/>
-				</td>
-				<td>
-					<s:property value="#product.productPrice"/>
-				</td>
-				<td>
-					<s:property value="#product.createdDate"/>
-				</td>
-				<td>
-					<a
-					href="updateDataAction?productId=<s:property value="#product.productId"/>">
-						<button class="actionBtn">Update</button>
-					</a>	
-				</td>
-				<td>
-					<a href="deleteAction?productId=<s:property value="#product.productId"/>">
-						<button class="actionBtn">Delete</button>
-					</a>
-				</td>
-			</tr>
-		</s:iterator>
-		
-	</table>
+	<br/>
+	<br/>
+	<br/>
+<div class="w3-row-padding w3-margin-bottom">
+	<div class="w3-row-padding w3-margin-bottom">
+		<div class="w3-quarter">
+			<div class="w3-container w3-red w3-padding-16">
+				<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+				<div class="w3-right">
+					<h3><s:property value="totalPatients"/></h3>
+				</div>
+				<div class="w3-clear"></div>
+				<h4>Patients</h4>
+			</div>
+		</div>
+		<div class="w3-quarter">
+			<div class="w3-container w3-blue w3-padding-16">
+				<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+				<div class="w3-right">
+					<h3><s:property value="totalAppointment"/></h3>
+				</div>
+				<div class="w3-clear"></div>
+				<h4>Appointments</h4>
+			</div>
+		</div>
+		<div class="w3-quarter">
+			<div class="w3-container w3-teal w3-padding-16">
+				<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+				<div class="w3-right">
+					<h3><s:property value="totalProcessImages"/></h3>
+				</div>
+				<div class="w3-clear"></div>
+				<h4>Processed Images</h4>
+			</div>
+		</div>
+		<div class="w3-quarter">
+			<div class="w3-container w3-orange w3-text-white w3-padding-16">
+				<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+				<div class="w3-right">
+					<h3><s:property value="totalUsers"/></h3>
+				</div>
+				<div class="w3-clear"></div>
+				<h4>Users</h4>
+			</div>
+		</div>
+
+	</div>
+</div>
+<style>
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 600;
+		color: white;
+		margin: 0px;
+	}
+	h3, .h3 {
+		font-size: 6.75em;
+		line-height: 1.25;
+	}
+</style>
 </body>
 </html>

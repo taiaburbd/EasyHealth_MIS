@@ -25,8 +25,8 @@ public class UpdatePatientAction extends ActionSupport{
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		String createdDateStr = formatter.format(new Date());
 		Patients patient = new Patients(patientId, patientName, patientPhone, patientEmail,patientBloodGroup,createdDateStr,patientGender, createdDateStr);
-		System.out.println(patientId);
-		System.out.println(patient);
+//		System.out.println(patientId);
+//		System.out.println(patient);
 		int recordUpdated = PatientManagementDAO.updatePatient(patient);
 
 		if (recordUpdated == 1) {

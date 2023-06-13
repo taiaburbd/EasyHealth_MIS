@@ -32,17 +32,9 @@
             <h5 class="social-title">Follow Us On</h5>
             <ul>
                 <li>
-                    <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100093522883334"><i class="lni lni-facebook-filled"></i></a>
                 </li>
-                <li>
-                    <a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><i class="lni lni-youtube"></i></a>
-                </li>
+
             </ul>
         </div>
         <!-- sidebar social -->

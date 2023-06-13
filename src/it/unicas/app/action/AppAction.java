@@ -10,10 +10,8 @@ public class AppAction extends ActionSupport {
 
     public String execute() {
         totalPatients =AppManagementDAO.getTotalpatients().getTotalValues();
-//        totalAppointment ='20';
-//        totalProcessImages ='120';
-        System.out.println("totalPatients");
-        System.out.println(totalPatients);
+        totalAppointment =AppManagementDAO.getTotalAppointment().getTotalValues();
+        totalProcessImages =AppManagementDAO.getTotalProcessImages().getTotalValues();
         return SUCCESS;
     }
 

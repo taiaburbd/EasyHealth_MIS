@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 19, 2023 at 12:01 PM
+-- Generation Time: Jun 13, 2023 at 03:32 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
@@ -66,9 +66,13 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `patient_id`, `doctor_id`, `appointment_date`, `time_slot`) VALUES
-(1, 'P2305114536', 2, '2023-05-15', '11:00'),
-(2, 'P230512117', 2, '2023-05-15', '12:00'),
-(4, 'P2305122921', 1, '2023-05-16', '15:00');
+(23, 'P2305132656', 2, '2023-06-09', '10:00'),
+(24, 'P2305293629', 1, '2023-06-11', '10:00'),
+(27, 'P230512292', 1, '2023-06-11', '10:00'),
+(29, 'P2305293629', 2, '2023-05-30', '12:00'),
+(30, 'P2305293629', 1, '2023-07-08', '17:00'),
+(31, 'P2305293629', 1, '2023-06-20', '17:00'),
+(32, 'P2305293629', 1, '2023-06-20', '17:00');
 
 -- --------------------------------------------------------
 
@@ -81,7 +85,7 @@ CREATE TABLE `doctor_list` (
   `dr_name` varchar(100) DEFAULT NULL,
   `dr_phone` varchar(60) DEFAULT NULL,
   `dr_email` varchar(100) DEFAULT NULL,
-  `created_date` date NOT NULL
+  `created_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -90,7 +94,8 @@ CREATE TABLE `doctor_list` (
 
 INSERT INTO `doctor_list` (`id`, `dr_name`, `dr_phone`, `dr_email`, `created_date`) VALUES
 (1, 'Mr Doctor Rock', '00000', 'rock@ck.com', '2023-05-12'),
-(2, 'Mr Doctor Nick', '00000', 'nick@ck.com', '2023-05-12');
+(2, 'Mr Doctor Nick', '00000', 'nick@ck.com', '2023-05-12'),
+(3, 'Mr doctor', '32 111', 'doc@gmail.com', '2023-05-29');
 
 -- --------------------------------------------------------
 
@@ -103,13 +108,6 @@ CREATE TABLE `loginInfo` (
   `password` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `loginInfo`
---
-
-INSERT INTO `loginInfo` (`userName`, `password`) VALUES
-('prova', 'prova');
-
 -- --------------------------------------------------------
 
 --
@@ -119,7 +117,7 @@ INSERT INTO `loginInfo` (`userName`, `password`) VALUES
 CREATE TABLE `login_info` (
   `user_name` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `create_date` date NOT NULL
+  `create_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -127,16 +125,41 @@ CREATE TABLE `login_info` (
 --
 
 INSERT INTO `login_info` (`user_name`, `password`, `create_date`) VALUES
-('mmz', 'mmzz', '2023-05-08'),
-('prova', 'prova', '0000-00-00');
+('prova', 'prova', '0000-00-00'),
+('taiabur', 'taiabur', '2023-05-22'),
+('zain', 'zain', '2023-06-09');
+
+-- --------------------------------------------------------
 
 --
--- Triggers `login_info`
+-- Table structure for table `medical_imaging`
 --
-DELIMITER $$
-CREATE TRIGGER `log_info_triger` BEFORE INSERT ON `login_info` FOR EACH ROW INSERT INTO loginInfo (loginInfo.userName, loginInfo.password) VALUES (login_info.user_name, login_info.password)
-$$
-DELIMITER ;
+
+CREATE TABLE `medical_imaging` (
+  `image_id` int(11) NOT NULL,
+  `pimage_id` int(11) NOT NULL,
+  `patient_id` varchar(20) DEFAULT NULL,
+  `image_path` text DEFAULT NULL,
+  `investigation_type` varchar(50) DEFAULT NULL,
+  `created_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `medical_imaging`
+--
+
+INSERT INTO `medical_imaging` (`image_id`, `pimage_id`, `patient_id`, `image_path`, `investigation_type`, `created_date`) VALUES
+(1, 0, 'P230512117', '965c5faa-5bf2-4893-8163-66393c8c542f.jpg', 'B-Scan', '2023-05-27 02:11:46'),
+(2, 0, 'P2305132656', '68488636-f2dd-4b16-b1fd-cd4d423c963d.jpg', 'B-Scan', '2023-05-27 02:11:51'),
+(3, 0, 'P2305114536', '485fcba1-da8b-468a-88a9-e9fcfc4b7ca4.jpg', 'B-Scan', '2023-05-27 02:11:57'),
+(4, 3, 'P2305114536', 'segmented_image/RBVS/485fcba1-da8b-468a-88a9-e9fcfc4b7ca4.jpg', 'Retinal Blood Vessel Segmentation', '2023-05-27 02:12:36'),
+(5, 3, 'P2305114536', 'segmented_image/RBVS/485fcba1-da8b-468a-88a9-e9fcfc4b7ca4.jpg', 'Retinal Blood Vessel Segmentation', '2023-05-27 02:40:22'),
+(6, 1, 'P230512117', 'segmented_image/RBVS/965c5faa-5bf2-4893-8163-66393c8c542f.jpg', 'Retinal Blood Vessel Segmentation', '2023-05-28 14:08:59'),
+(7, 1, 'P230512117', 'segmented_image/RBVS/965c5faa-5bf2-4893-8163-66393c8c542f.jpg', 'Retinal Blood Vessel Segmentation', '2023-06-09 19:24:45'),
+(8, 0, 'P230512292', '1d348283-3481-441d-9a94-db2fa8544c3f.jpg', 'Color Fundus Photograph', '2023-06-09 19:26:17'),
+(9, 8, 'P230512292', 'segmented_image/RBVS/1d348283-3481-441d-9a94-db2fa8544c3f.jpg', 'Retinal Blood Vessel Segmentation', '2023-06-09 19:26:54'),
+(10, 1, 'P230512117', 'segmented_image/RBVS/965c5faa-5bf2-4893-8163-66393c8c542f.jpg', 'Retinal Blood Vessel Segmentation', '2023-06-13 02:08:10'),
+(11, 2, 'P2305132656', 'segmented_image/RBVS/68488636-f2dd-4b16-b1fd-cd4d423c963d.jpg', 'Retinal Blood Vessel Segmentation', '2023-06-13 02:25:51');
 
 -- --------------------------------------------------------
 
@@ -160,11 +183,51 @@ CREATE TABLE `patient_list` (
 --
 
 INSERT INTO `patient_list` (`patient_id`, `patient_name`, `patient_phone`, `patient_email`, `patient_blood_group`, `patient_dob`, `patient_sex`, `created_date`) VALUES
-('P2305114536', 'Taiabur', '01914651671', 'taiaburbd@gmail.com', 'A+', '2023-05-11', 'Male', '2023-05-11'),
 ('P230512117', 'Carmen', '00000', 'carman@man.com', 'A+', '2023-05-12', 'Female', '2023-05-12'),
-('P230512292', 'Zain', '00000000', 'Zain@gmail.com', 'A+', '2023-05-12', 'Male', '2023-05-12'),
-('P2305122921', 'Imran Khan', '00000000', 'imran@khan', 'A+', '2023-05-12', 'Male', '2023-05-12'),
-('P2305132656', 'Amina', '000000', 'amina@bz.com', 'A-', '2023-05-13', 'Female', '2023-05-13');
+('P230512292', 'Zain Amin', '00000000', 'Zain@gmail.com', 'A+', '2023-05-12', 'Male', '2023-05-12'),
+('P2305132656', 'Amina', '000000', 'amina@bz.com', 'A-', '2023-05-13', 'Female', '2023-05-13'),
+('P2305293629', 'Taiabur', '01914651671', 'taiaburbd@gmail.com', 'A+', '2023-05-29', 'Male', '2023-05-29'),
+('P230609917', 'Imran', '019122456798', 'imran@gmail.com', 'B+', '2023-06-09', 'Male', '2023-06-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prescriptions`
+--
+
+CREATE TABLE `prescriptions` (
+  `id` int(11) NOT NULL,
+  `appointment_id` int(11) DEFAULT NULL,
+  `patient_id` varchar(20) DEFAULT NULL,
+  `doctor_id` int(11) NOT NULL,
+  `history_dm` varchar(20) DEFAULT NULL,
+  `htn` varchar(10) DEFAULT NULL,
+  `ihd` varchar(10) DEFAULT NULL,
+  `ckd` varchar(20) DEFAULT NULL,
+  `cabg` varchar(20) DEFAULT NULL,
+  `stenting` varchar(20) DEFAULT NULL,
+  `anti_coagulaut` varchar(20) DEFAULT NULL,
+  `bep` varchar(20) DEFAULT NULL,
+  `thyroid` varchar(20) DEFAULT NULL,
+  `pace_makcer` varchar(20) DEFAULT NULL,
+  `medicine_type` varchar(20) DEFAULT NULL,
+  `medicine_name` varchar(50) DEFAULT NULL,
+  `medicine_dose` varchar(20) DEFAULT NULL,
+  `medicine_duration` varchar(20) DEFAULT NULL,
+  `investigation_advice` varchar(30) DEFAULT NULL,
+  `treatment_plan` varchar(30) DEFAULT NULL,
+  `doctor_note` text DEFAULT NULL,
+  `create_date` date NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(10) DEFAULT 'inactive'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `prescriptions`
+--
+
+INSERT INTO `prescriptions` (`id`, `appointment_id`, `patient_id`, `doctor_id`, `history_dm`, `htn`, `ihd`, `ckd`, `cabg`, `stenting`, `anti_coagulaut`, `bep`, `thyroid`, `pace_makcer`, `medicine_type`, `medicine_name`, `medicine_dose`, `medicine_duration`, `investigation_advice`, `treatment_plan`, `doctor_note`, `create_date`, `status`) VALUES
+(1, 11, 'P230512117', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, NULL, NULL, '2023-05-24', 'inactive'),
+(4, 23, 'P2305132656', 2, 'false', 'true', 'false', 'true', 'true', 'false', NULL, 'false', 'true', NULL, 'Eye Drop', 'Moftim', '2 Drop 4 Hourly', '2 weeks ', 'Color Fundus Photograph (CFP)', 'Lasik Suergery', 'As soon as possible ', '2023-06-13', 'inactive');
 
 -- --------------------------------------------------------
 
@@ -201,7 +264,9 @@ ALTER TABLE `amici`
 -- Indexes for table `appointment`
 --
 ALTER TABLE `appointment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `patient_id_fk` (`patient_id`),
+  ADD KEY `doctor_id` (`doctor_id`);
 
 --
 -- Indexes for table `doctor_list`
@@ -222,11 +287,23 @@ ALTER TABLE `login_info`
   ADD PRIMARY KEY (`user_name`);
 
 --
+-- Indexes for table `medical_imaging`
+--
+ALTER TABLE `medical_imaging`
+  ADD PRIMARY KEY (`image_id`);
+
+--
 -- Indexes for table `patient_list`
 --
 ALTER TABLE `patient_list`
   ADD UNIQUE KEY `patient_id` (`patient_id`),
   ADD KEY `admission_date` (`created_date`);
+
+--
+-- Indexes for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `product`
@@ -248,19 +325,42 @@ ALTER TABLE `amici`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `doctor_list`
 --
 ALTER TABLE `doctor_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `medical_imaging`
+--
+ALTER TABLE `medical_imaging`
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `appointment`
+--
+ALTER TABLE `appointment`
+  ADD CONSTRAINT `appointment_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor_list` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `patient_id_fk` FOREIGN KEY (`patient_id`) REFERENCES `patient_list` (`patient_id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

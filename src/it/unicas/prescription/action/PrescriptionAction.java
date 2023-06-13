@@ -11,9 +11,6 @@ public class PrescriptionAction {
     private String status;
 
     public void initializeData() {
-        System.out.println("****** Filter Data ******");
-        System.out.println(patientId);
-        System.out.println(status);
         prescriptionList = PrescriptionManagementDAO.getAllData(patientId, status);
 
     }

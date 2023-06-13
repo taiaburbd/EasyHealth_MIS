@@ -23,5 +23,7 @@
     <orderEntry type="library" name="javax.servlet.api" level="project" />
     <orderEntry type="library" name="apache.struts.struts2.dojo.plugin" level="project" />
     <orderEntry type="library" name="commons-fileupload-1.41" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="jar_files" level="project" />
   </component>
 </module>

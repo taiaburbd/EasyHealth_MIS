@@ -110,6 +110,26 @@
 			<result name="success">/prescription.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
+		<action name="addPrescriptionAction" class="it.unicas.prescription.action.AddPrescriptionAction">
+			<result name="success">/prescriptionAdd.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="savePrescriptionAction" class="it.unicas.prescription.action.SavePrescriptionAction">
+			<result name="success" type="redirect">prescriptionAction</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="PrintPrescriptionAction" class="it.unicas.prescription.action.PrintPrescriptionAction">
+			<result name="success">/prescriptionPrint.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="deletePrescriptionAction" class="it.unicas.prescription.action.DeletePrescriptionAction">
+			<result name="success" type="redirect">prescriptionAction</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="TreatmentAction" class="it.unicas.prescription.action.TreatmentAction">
+			<result name="success">/prescriptionTreatment.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
 		<!--		end appointment area-->
 <!--		start settings option area-->
 

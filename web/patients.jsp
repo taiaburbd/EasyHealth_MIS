@@ -25,7 +25,7 @@
     </s:form>
 </div>
 
-<table width="950" class="patientTable" align="center">
+<table width="1050" class="patientTable" align="center">
     <thead>
     <tr>
         <th>Patient ID</th>
@@ -69,7 +69,7 @@
                 </a>
             </td>
             <td>
-                <a href="deletePatientAction?patientId=<s:property value="#patient.patientId"/>">
+                <a href="deletePatientAction?patientId=<s:property value="#patient.patientId"/>" onclick="return confirm('Are you sure?')">
                     <button class="actionBtn">Delete</button>
                 </a>
             </td>
