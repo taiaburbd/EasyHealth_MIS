@@ -17,13 +17,7 @@
 
 <div align="center">
   <h2>Patient Followup</h2>
-  <%--  <a href="patientsAdd.jsp">Add New Appointment</a>--%>
-  <%--  <s:form action="patientAction" class="filterPanel">--%>
-  <%--    <s:textfield name="patientName" label="Patient Name" class="formTextField"/>--%>
-  <%--    <s:textfield name="patientPhone" label="Patient Phone" class="formTextField"/>--%>
-  <%--    <pippo:datetimepicker name="createdDate" label="Create Date" displayFormat="dd-MMM-yyyy" />--%>
-  <%--    <s:submit value="Search" class="actionBtn"/>--%>
-  <%--  </s:form>--%>
+  <img width="800" src="<s:url value='/assets/images/patient-followup.jpeg'/>">
 </div>
 
 <%--<table width="750" class="patientTable" align="center">--%>

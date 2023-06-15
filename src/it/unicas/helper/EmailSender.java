@@ -51,7 +51,7 @@ public class EmailSender {
         int smtpPort = 587;
 
         // Sender and recipient details
-        String sender = "sender@example.com";
+        String sender = "alojustme@gmail.com";
         String recipient = "taiaburbd@gmail.com";
 
         // Email content
@@ -59,10 +59,6 @@ public class EmailSender {
 
         // Recipient's name
         String recipientName = "David";
-//        account_hoder_email
-//                doctor_name
-//        appointment_date
-//                appointment_time
 
         // Read the HTML template from a file
         String body = readHtmlTemplate("app_email.html");

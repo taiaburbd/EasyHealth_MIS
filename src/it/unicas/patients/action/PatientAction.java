@@ -16,11 +16,6 @@ public class PatientAction extends ActionSupport{
 	private Date createdDate;
 	
 	public void initializePatients() {
-		System.out.println("****** Filter Data ******");
-		System.out.println(patientName);
-		System.out.println(patientPhone);
-		System.out.println(createdDate);
-
 		String createdDateStr = "";
 		if(createdDate != null) {
 			SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");

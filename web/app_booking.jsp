@@ -194,12 +194,6 @@
 
 <%@ include file="app_footer.jsp" %>
 
-<div class="made-in-ayroui mt-4">
-    <a href="https://ayroui.com" target="_blank" rel="nofollow">
-        <img style="width:220px" src="assets/images/ayroui.svg">
-    </a>
-</div>
-
 <a href="#" class="scroll-top btn-hover">
     <i class="lni lni-chevron-up"></i>
 </a>

@@ -46,7 +46,7 @@
             <div class="footer-widget f-link">
               <h5>Support</h5>
               <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=100093522883334">Facebook</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100093522883334" target="_blank">Facebook</a></li>
               </ul>
             </div>
             <!-- End Single Widget -->
